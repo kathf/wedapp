@@ -6,7 +6,7 @@ postgres: &postgres
   port: 5432
 
 auth: &auth
-  username: Kath
+  username: kath-ibu
   password:
 
 development:
