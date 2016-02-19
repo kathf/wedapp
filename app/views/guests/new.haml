@@ -1,0 +1,4 @@
+%fieldset
+  = simple_form_for [@rsvp, @guest] do |g|
+    = g.input :name, wrapper_html: {class: "col-xs-5"}
+    = g.input :email, wrapper_html: {class: "col-xs-7"}

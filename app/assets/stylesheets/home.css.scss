@@ -1,0 +1,95 @@
+$font-stack: Helvetica, sans-serif;
+$dark: #272526;
+$gold: #DCA861;
+$dark-green: #535A2F;
+
+$block-font: 'MonserratBlack';
+$curly-font: 'LearningCurve';
+
+@font-face {
+  font-family: 'LearningCurve';
+  src: font-url('learning-curve.otf');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'MonserratBlack';
+  src: font-url('montserrat-black.otf');
+}
+
+
+// @media (min-width: @screen-sm-min) {
+//  }
+// @media (max-width: @screen-xs-max) { ... }
+
+#home-container {
+
+  color: white;
+  background-color: $dark;
+
+  .image-container, .image-container img {
+    position: fixed;
+
+    #image-b-l {
+      height: 80%;
+      bottom: 0px;
+      left: 0px;
+    }
+
+    #image-b-r {
+      width: 20%;
+      bottom: 0px;
+      right: 0px;
+    }
+
+    #image-t-r {
+      height: 50%;
+      top: 0px;
+      right: 0px;
+    }
+  }
+
+  #fixed-border {
+    border: 10px solid white;
+    margin: 15vh 10vw;
+
+    #text-container {
+      margin: 5em 0 5em 0;
+
+      #names {
+        font-family: $curly-font;
+        font-size: 7em;
+        // width: 100%;
+        margin-bottom: 0;
+      }
+
+      #wedding {
+        font-family: $block-font;
+        letter-spacing: 5px;
+        font-size: 5em;
+        margin-top: 0;
+        margin-bottom: 1em;
+      }
+    }
+
+    nav.navbar {
+      background-color: transparent;
+
+      ul.nav li a {
+        color: white;
+      }
+    }
+
+  }
+
+  fieldset {
+    margin: 1em;
+  }
+}
+
+
+//
+// #add_guest {
+//   position: relative;
+//   top: -49px;
+// }

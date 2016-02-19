@@ -1,0 +1,27 @@
+#home-container
+
+  .image-container
+
+    =image_tag("bottom-right.png", id: "image-b-r")
+    =image_tag("bottom-left.png", id: "image-b-l")
+    =image_tag("top-right.png", id: "image-t-r")
+
+  .container-fluid
+    .row#fixed-border
+      .col-lg-8.col-lg-offset-2
+        .row
+          .col-lg-8.col-lg-offset-2.text-center#text-container
+            #header-container
+              .h3#names
+                Brooke and Kath's
+              .h3#wedding
+                WEDDING
+            #info-container
+              .h4#date
+                26th November 2016
+              .h4#venue
+                Lilyvale in the Royal National Park
+
+        .row
+          .col-lg-12
+            =render "menu"

@@ -1,0 +1,49 @@
+.modal.fade.show#rsvpModal
+  .modal-dialog
+    .modal-content
+
+      .modal-body.clearfix
+
+        %button.close(type="button" data-dismiss="modal")
+          %span(aria-hidden="true") &times;
+
+        .row
+          %h3.text-center RSVP
+          %h5.text-center Please respond by 1 August 2016
+
+
+        %fieldset#guests-heading
+          %form-group.col-xs-5
+            %label.control-label(for="rsvp_guests_attributes_0_name")
+              Guest name
+          %form-group.col-xs-7
+            %label.control-label(for="rsvp_guests_attributes_0_email")
+              Email
+
+        #guests-container
+        #guests-form
+          %fieldset
+            = simple_form_for @rsvp do |r|
+              = r.simple_fields_for :guests do |g|
+                = g.input :name, label: false, wrapper_html: {class: "col-xs-5"}
+                = g.input :email, label: false, wrapper_html: {class: "col-xs-7"}
+
+        %fieldset#add-guest-container
+          .col-xs-1
+            %a.btn.pull-left#add_guest(href="#" data-remote="true")
+              %i.glyphicon.glyphicon-plus
+          .col-xs-5
+            %p#add-btn Add another guest
+
+      .modal-footer#response
+        %form
+          .row
+            .col-xs-6#rsvp-yes
+              %button.btn.btn-default.btn-lg.btn-block(href="#" type="submit" form="edit_guest_#{@guest.id}" )
+                Count me in!
+            .col-xs-6#rsvp-no
+              %button.btn.btn-default.btn-lg.btn-block
+                Nah, got better things to do
+
+      .modal-footer.hide#details
+        = render 'rsvp'

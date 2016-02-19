@@ -1,0 +1,9 @@
+.row
+  %fieldset(class="#{rsvp.id}")
+    .col-xs-4
+      = guest.name
+    .col-xs-5
+      = guest.email
+    .col-xs-2
+      %a.btn.pull-left#guest-delete(href="#{rsvp_guest_path(rsvp, guest)}" method="delete")
+        %i.glyphicon.glyphicon-remove

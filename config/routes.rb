@@ -1,13 +1,25 @@
 Rails.application.routes.draw do
-  root 'home#index'
+  devise_for :admins
+  root 'home#show'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+  get 'wedding' => 'home#wedding'
+  get 'weekend' => 'home#weekend'
+  get 'transport' => 'home#transport'
+  get 'accommodation' => 'home#accommodation'
+  get 'more' => 'home#more'
 
-  resources :guests
+  resources :rsvps do
+    # get 'add_guest', on: :member
+    resources :guests
+  end
+
+  resources :contributions
+  resources :photos
 
   # Example resource route with options:
   #   resources :products do

@@ -6,17 +6,19 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'unicorn'
+gem 'devise', '~> 3.5', '>= 3.5.3'
+gem 'simple_form'
+gem 'sitemap_generator'
+gem 'pg'
+gem 'haml'
+# gem 'turbolinks'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap'
 end
 
-gem 'simple_form'
-gem 'sitemap_generator'
-gem 'pg'
-
 group :development do
-  gem "better_errors"
+  # gem "better_errors"
   gem 'quiet_assets'
 end
 

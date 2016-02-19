@@ -1,0 +1,17 @@
+%nav(class="navbar #{'navbar-fixed-top' unless current_page?('/')}" )
+  .container-fluid
+
+    .navbar-header.text-center
+      %button.navbar-toggle.collapsed(type="button" data-toggle="collapse" data-target="#navbar")
+        %i.fa.fa-bars.fa-3x
+
+    .collapse.navbar-collapse#navbar
+      %ul.nav.nav-justified
+        - unless current_page?('/')
+          %li= link_to "Home", '/'
+        %li= link_to "Wedding", wedding_path
+        %li= link_to "Weekend", weekend_path
+        %li= link_to "Transport", transport_path
+        %li= link_to "Accommodation", accommodation_path
+        %li= link_to "RSVP", new_rsvp_path
+        %li= link_to "More", more_path

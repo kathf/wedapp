@@ -11,10 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151220053447) do
+ActiveRecord::Schema.define(version: 20160119072315) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "admins", force: :cascade do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet     "current_sign_in_ip"
+    t.inet     "last_sign_in_ip"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+  end
+
+  add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
+  add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
 
   create_table "contributions", force: :cascade do |t|
     t.integer  "guest_id"
@@ -40,8 +58,8 @@ ActiveRecord::Schema.define(version: 20151220053447) do
   end
 
   create_table "guests", force: :cascade do |t|
-    t.string   "firstname"
-    t.string   "lastname"
+    t.integer  "rsvp_id"
+    t.string   "name"
     t.string   "email"
     t.boolean  "send_notifications"
     t.datetime "created_at",         null: false
@@ -49,14 +67,24 @@ ActiveRecord::Schema.define(version: 20151220053447) do
   end
 
   create_table "rsvps", force: :cascade do |t|
-    t.integer  "guest_id"
-    t.integer  "linked_guest_id"
-    t.string   "response"
-    t.datetime "arrive"
-    t.datetime "leave"
-    t.date     "rsvp_date"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.boolean  "response"
+    t.boolean  "wedding"
+    t.boolean  "friday_dinner"
+    t.boolean  "friday_camping"
+    t.boolean  "saturday_breakfast"
+    t.boolean  "saturday_camping"
+    t.boolean  "sunday_breakfast"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  create_table "transports", force: :cascade do |t|
+    t.boolean  "bus"
+    t.string   "bus_location"
+    t.boolean  "driving"
+    t.boolean  "none"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
 end
