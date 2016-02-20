@@ -22,74 +22,88 @@ $curly-font: 'LearningCurve';
 //  }
 // @media (max-width: @screen-xs-max) { ... }
 
-#home-container {
+body {
 
+  height: 100vh;
+  padding-bottom: 20px;
   color: white;
   background-color: $dark;
 
-  .image-container, .image-container img {
-    position: fixed;
+  #home-container {
 
-    #image-b-l {
-      height: 80%;
-      bottom: 0px;
-      left: 0px;
-    }
+    .image-container, .image-container img {
+      position: fixed;
 
-    #image-b-r {
-      width: 20%;
-      bottom: 0px;
-      right: 0px;
-    }
-
-    #image-t-r {
-      height: 50%;
-      top: 0px;
-      right: 0px;
-    }
-  }
-
-  #fixed-border {
-    border: 10px solid white;
-    margin: 15vh 10vw;
-
-    #text-container {
-      margin: 5em 0 5em 0;
-
-      #names {
-        font-family: $curly-font;
-        font-size: 7em;
-        // width: 100%;
-        margin-bottom: 0;
+      #image-b-l {
+        height: 80%;
+        bottom: 0px;
+        left: 0px;
       }
 
-      #wedding {
-        font-family: $block-font;
-        letter-spacing: 5px;
-        font-size: 5em;
-        margin-top: 0;
-        margin-bottom: 1em;
+      #image-b-r {
+        width: 20%;
+        bottom: 0px;
+        right: 0px;
+      }
+
+      #image-t-r {
+        height: 50%;
+        top: 0px;
+        right: 0px;
       }
     }
 
-    nav.navbar {
-      background-color: transparent;
+    #fixed-border {
+      border: 10px solid white;
+      margin: 15vh 10vw;
 
-      ul.nav li a {
-        color: white;
+      #text-container {
+        margin: 5em 0 5em 0;
+
+        #names {
+          font-family: $curly-font;
+          font-size: 7em;
+          // width: 100%;
+          margin-bottom: 0;
+        }
+
+        #wedding {
+          font-family: $block-font;
+          letter-spacing: 5px;
+          font-size: 5em;
+          margin-top: 0;
+          margin-bottom: 1em;
+        }
       }
+
+      nav.navbar {
+        background-color: transparent;
+
+        .nav li {
+
+          a {
+            color: white;
+            border: 0.01px solid $dark;
+          }
+
+          a:hover {
+            background-color: transparent;
+            border: 0.01px solid white;
+          }
+        }
+
+      }
+
     }
 
-  }
-
-  fieldset {
-    margin: 1em;
+    fieldset {
+      margin: 1em;
+    }
   }
 }
 
-
-//
-// #add_guest {
-//   position: relative;
-//   top: -49px;
-// }
+  //
+  // #add_guest {
+  //   position: relative;
+  //   top: -49px;
+  // }
